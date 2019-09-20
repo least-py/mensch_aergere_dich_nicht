@@ -27,15 +27,14 @@
 
 
 <div id="container" style="width:1200px; height:500px; background-color: #000000"></div>
-<input id="würfelbutton" type="button" , onclick="throwTheDice();" , value="Throw the dice">
+<input id="dbutton" type="button" , onclick="throwTheDice();" , value="Throw the dice">
 
-<p id="Hilfe"></p>
-<p id="ausgabe"></p>
+<p id="help"></p>
+<p id="d-output"></p>
 
 	
 </script>
 <script>
-//<input id="x" type="text" size="15" maxlength="15"/>
     var scene;
     var camera;
     var cube;
@@ -212,8 +211,8 @@
 	
 	function throwTheDice() {
             dice = Math.floor(1 + Math.random() * 6);
-            textchange("ausgabe", "dice: " + dice);
-            document.getElementById("ausgabe").style.display = "block";
+            textchange("d-output", "dice: " + dice);
+            document.getElementById("d-output").style.display = "block";
     }
 	
 	function textchange(id, value) {
