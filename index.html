@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
+	
     <meta charset="UTF-8">
     <title>Mensch ärgere Dich nicht!</title>
     <script src="three.min.js"></script>
@@ -21,21 +22,20 @@
     </style>
 
 </head>
-<body>
+<body  bgcolor="#000000">
+<font size="5" color="#ffffff">
 
 
-<div id="container" style="width:1000px; height:500px; background-color: #000000"></div>
-<input id="würfelbutton" type="button" , onclick="throwTheDice();" , value="Würfeln">
-<input id="x" type="text" size="15" maxlength="15"/>
+<div id="container" style="width:1200px; height:500px; background-color: #000000"></div>
+<input id="würfelbutton" type="button" , onclick="throwTheDice();" , value="Throw the dice">
+
 <p id="Hilfe"></p>
 <p id="ausgabe"></p>
-<div>
-	<div><p>Du brauchst eine 6, um aus der Startposition zu gelangen. Beachte: Du kannst dich selbst throwOut!</p></div>
-	<div><p>Die gewünschte figure bewegt sich durch Anklicken. Ziel ist es, alle Figuren im Haus zu positionieren. </p></div>
-</div>
+
 	
 </script>
 <script>
+//<input id="x" type="text" size="15" maxlength="15"/>
     var scene;
     var camera;
     var cube;
@@ -89,7 +89,6 @@
 
 		createBoard();
 
-        var sFeld;
 
         initialPosition();
 		
@@ -186,7 +185,6 @@
 					INTERSECTED = intersects[a];
 					if (figures.includes(intersects[a].object.parent)) {
 						selectedPlayer = INTERSECTED.object.parent;
-						//feld(selectedPlayer);
 					}
 				}
 			}	
@@ -194,7 +192,7 @@
 
 		function onDocumentMouseMove(event) {
 			event.preventDefault();
-			mouse.x = ( event.clientX / 1000 ) * 2 - 1;
+			mouse.x = ( event.clientX / 1200 ) * 2 - 1;
 			mouse.y = -( event.clientY / 500 ) * 2 + 1;
 		}
 		
@@ -214,7 +212,7 @@
 	
 	function throwTheDice() {
             dice = Math.floor(1 + Math.random() * 6);
-            textchange("ausgabe", "Augenzahl :" + dice);
+            textchange("ausgabe", "dice: " + dice);
             document.getElementById("ausgabe").style.display = "block";
     }
 	
