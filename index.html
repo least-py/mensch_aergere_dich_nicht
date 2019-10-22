@@ -85,6 +85,16 @@
         scene.add(camera);
         camera.position.set(0, -17, 15);
         camera.lookAt(new THREE.Vector3(0, 0, 0));
+		
+		
+		scene.add( new THREE.AmbientLight( 0x212222) );
+      
+		var light = new THREE.DirectionalLight(0xffffff, 1);
+		light.position.x = 0;
+		light.position.y = 10;
+		light.position.z = 10;
+		scene.add(light);
+		
 
 		createBoard();
 
