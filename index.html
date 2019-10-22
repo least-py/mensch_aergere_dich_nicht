@@ -320,7 +320,7 @@
 	
 	function createField(col, x, y){
 		cg = new THREE.CircleGeometry(0.5, 32);
-        cm = new THREE.MeshBasicMaterial({color: col});
+        cm = new THREE.MeshPhongMaterial({color: col});
 		var circle = new THREE.Mesh(cg, cm);
 		scene.add(circle);
 		circle.position.set(x,y,1);
@@ -343,7 +343,7 @@
 	
 		//the 18x18 board 
         var geometry = new THREE.BoxGeometry(18, 18, 1);
-        var material = new THREE.MeshBasicMaterial({color: "brown"});
+        var material = new THREE.MeshPhongMaterial({color: "brown"});
         cube = new THREE.Mesh(geometry, material);
         scene.add(cube);
 		
@@ -507,11 +507,11 @@
             
 		function figure(co1, co2, co3, sph1, sph2, sph3, col) {
             var conegeometry = new THREE.ConeGeometry(co1, co2, co3);
-            var conematerial = new THREE.MeshBasicMaterial({color: col});
+            var conematerial = new THREE.MeshPhongMaterial({color: col});
             var cone = new THREE.Mesh(conegeometry, conematerial);
 
             var sphgeometry = new THREE.SphereGeometry(sph1, sph2, sph3);
-            var sphmaterial = new THREE.MeshBasicMaterial({color: col});
+            var sphmaterial = new THREE.MeshPhongMaterial({color: col});
             var sphere = new THREE.Mesh(sphgeometry, sphmaterial);
 
             sphere.position.set(0,2,0);
